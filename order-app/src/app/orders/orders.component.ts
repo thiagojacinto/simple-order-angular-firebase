@@ -30,6 +30,9 @@ export class OrdersComponent implements OnInit {
   removeProduct = (product) => {
     // this.allOrders.filter(el => el !== product);
     const index = this.allOrders.indexOf(product);
-    if (index > -1) this.allOrders.splice(index,1);
+    if (index > -1) this.allOrders.splice(index, 1);
   };
+
+  // TODO
+  onSubmit = () => {};
 }
