@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Injectable({
@@ -6,7 +7,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class OrdersService {
 
-  constructor() { }
+  constructor(private firestore: AngularFirestore) { }
 
   form = new FormGroup({
     customerName: new FormControl(""),
@@ -14,4 +15,8 @@ export class OrdersService {
     productOrder: new FormControl(""),
     completed: new FormControl("")
   });
+
+  createCoffeeOrder(orderData) {
+    // TODO
+  }
 }
