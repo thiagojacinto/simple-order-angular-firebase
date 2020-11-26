@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "simple-order-angular": {
+      "hosting": {
+        "order-app": [
+          "simple-order-angular"
+        ]
+      }
+    }
+  }
+}
