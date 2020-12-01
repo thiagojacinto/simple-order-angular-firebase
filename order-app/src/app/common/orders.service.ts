@@ -17,6 +17,14 @@ export class OrdersService {
   });
 
   createCoffeeOrder(orderData) {
-    // TODO
+    return new Promise((resolve,reject) => {
+      this.firestore
+        .collection("coffeOrders")
+        .add(orderData)
+        .then(
+          (res) => resolve(),
+          (err) => reject(err)
+          );
+    });
   }
 }

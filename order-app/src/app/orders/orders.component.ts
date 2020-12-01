@@ -33,6 +33,17 @@ export class OrdersComponent implements OnInit {
     if (index > -1) this.allOrders.splice(index, 1);
   };
 
-  // TODO
-  onSubmit = () => {};
+  onSubmit() {
+    this.orderService.form.value.productOrder = this.allOrders;
+    let orderData = this.orderService.form.value;
+
+    this.orderService
+      .createCoffeeOrder(orderData)
+      .then((res) => {
+        
+        this.allOrders = [];
+        this.orderService.form.reset();
+      })
+      .catch((err) => console.error(err));
+  }
 }
