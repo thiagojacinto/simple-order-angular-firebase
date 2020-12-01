@@ -27,4 +27,10 @@ export class OrdersService {
           );
     });
   }
+
+  getCoffeeOrders() {
+    return this.firestore
+      .collection("coffeOrders")
+      .snapshotChanges();
+  }
 }
