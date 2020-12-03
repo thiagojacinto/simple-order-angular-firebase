@@ -105,3 +105,4 @@ dist
 
 # Deploy enviroment
 order-app/src/environments/environment.deploy.ts
+.DS_Store
