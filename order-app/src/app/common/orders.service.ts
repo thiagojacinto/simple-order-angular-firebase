@@ -21,7 +21,7 @@ export class OrdersService {
   createCoffeeOrder(orderData) {
     return new Promise((resolve, reject) => {
       this.firestore
-        .collection('coffeOrders')
+        .collection('coffeeOrders')
         .add(orderData)
         .then(
           (res) => resolve(),
@@ -31,19 +31,19 @@ export class OrdersService {
   }
 
   getCoffeeOrders() {
-    return this.firestore.collection('coffeOrders').snapshotChanges();
+    return this.firestore.collection('coffeeOrders').snapshotChanges();
   }
 
   updateCoffeeOrder(orderData) {
     return this.firestore
-      .collection('coffeOrders')
+      .collection('coffeeOrders')
       .doc(orderData.payload.doc.id)
       .set({ completed: true }, { merge: true });
   }
 
   removeCoffeeOrder = (orderData) => {
     return this.firestore
-      .collection('coffeOrders')
+      .collection('coffeeOrders')
       .doc(orderData.payload.doc.id)
       .delete();
   }
