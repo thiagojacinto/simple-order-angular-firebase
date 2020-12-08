@@ -1,0 +1,37 @@
+<form [formGroup]="this.orderService.form">
+  <input
+    placeholder="Order number"
+    type="text"
+    class="input-field col s12"
+    formControlName="orderNumber"
+  />
+
+  <input
+    placeholder="Customer's name"
+    type="text"
+    class="input-field col s12"
+    formControlName="customerName"
+  />
+
+  <button
+    class="waves-effect waves-light btn col s4 deep-purple lighten-3"
+    *ngFor="let product of coffees"
+    (click)="addProduct(product)"
+  >
+    {{ product }}
+  </button>
+
+  <button class="waves-effect waves-light btn col s12 purple lighten-2" (click)="onSubmit()">
+    Send
+  </button>
+</form>
+
+<ul class="collection">
+  <li *ngFor="let product of allOrders">
+    <span class="col s11">
+      {{ product }}
+    </span>
+
+    <a class="col s1" (click)="removeProduct(product)"> x </a>
+  </li>
+</ul>

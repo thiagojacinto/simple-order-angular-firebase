@@ -117,8 +117,13 @@
               "devServerTarget": "order-app:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "order-app"
 }
